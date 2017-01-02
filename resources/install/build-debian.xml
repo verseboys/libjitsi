@@ -59,7 +59,7 @@
         <mkdir dir="${tmp}/libjitsi/lib/src/jitsi-lgpl-dependencies/lib/installer-exclude"/>
 
         <!-- ice4j
-        svn checkout http://ice4j.googlecode.com/svn/trunk/ ice4j
+        git clone https://github.com/ice4j/ice4j
         -->
         <copy todir="${tmp}/libjitsi/lib/src/ice4j">
             <fileset dir="../ice4j">
