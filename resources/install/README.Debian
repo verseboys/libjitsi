@@ -2,6 +2,7 @@ To create debian source package you need some other projects sources that
 libjitsi depends on. In the same folder where libjitsi is checked out do:
 
 git clone https://github.com/jitsi/ice4j
+git clone https://github.com/jitsi/zrtp4j zrtp4j
 git clone https://github.com/jitsi/libsrc
 git clone https://github.com/jitsi/jitsi-lgpl-dependencies
 svn checkout svn://svn.code.sf.net/p/fmj/code/fmj fmj

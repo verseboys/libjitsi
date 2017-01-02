@@ -4,7 +4,7 @@
 
     <!-- The target that is called just after clean and before building. Will
     prepare all sources in ${tmp} folder. Expects ../fmj, ../ice4j,
-    ../jitsi-lgpl-dependencies, and ../libsrc to exist.
+    ../jitsi-lgpl-dependencies, ../zrtp4j, and ../libsrc to exist.
     -->
     <target name="deb-src" depends="deb-copy-libjitsi">
         <!-- pack as original sources -->
@@ -126,12 +126,15 @@
         <mkdir dir="${tmp}/libjitsi/lib/src/fmj/src.theora-java"/>
 
         <!-- zrtp4j -->
-        <unzip src="../libsrc/zrtp4j-src-3.2.0.zip"
-               dest="${tmp}/libjitsi/lib/src">
-            <patternset>
+        <copy todir="${tmp}/libjitsi/lib/src/zrtp4j">
+            <fileset dir="../zrtp4j">
+                <include name="src/**"/>
                 <exclude name="**/demo/**"/>
-            </patternset>
-        </unzip>
+                <include name="legal/**"/>
+                <include name="build.xml"/>
+                <include name="README.txt"/>
+            </fileset>
+        </copy>
 
         <!-- bccontrib -->
         <unzip src="../libsrc/bccontrib.zip"
