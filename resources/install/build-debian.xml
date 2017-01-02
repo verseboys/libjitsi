@@ -258,13 +258,6 @@
     invoked from rules
      -->
     <target name="deb-src-rebuild">
-            <!--depends="make"-->
-
-        <mkdir dir="lib/src/ice4j/lib"/>
-        <symlink resource="/usr/share/java/weupnp.jar"
-                 overwrite="true"
-                 link="lib/src/ice4j/lib/weupnp-0.1.2-SNAPSHOT.jar"/>
-
         <symlink resource="/usr/share/java/org.apache.felix.framework.jar"
                  overwrite="true"
                  link="lib/felix.jar"/>
