@@ -30,6 +30,7 @@ Build-Depends: debhelper (>= 9), javahelper,
                libxv-dev,
                libxt-dev,
                libopus-dev,
+               libsdes4j-java,
                libspeexdsp-dev,
                libspeex-dev,
                libmp3lame-dev,
@@ -56,6 +57,7 @@ Depends: ${misc:Depends},
          libbcprov-java,
          libjna-java,
          libjson-simple-java,
+         libsdes4j-java,
          libweupnp-java
 Recommends: ${java:Recommends}
 Description: VoIP and Instant Messaging client

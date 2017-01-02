@@ -77,18 +77,6 @@
             </patternset>
         </unzip>
 
-        <!-- sdes -->
-        <unzip src="../libsrc/sdes4j.zip"
-               dest="${tmp}/libjitsi/lib/src/"/>
-        <path id="sdes_name">
-            <dirset dir="${tmp}/libjitsi/lib/src/">
-                <include name="sdes4j-*"/>
-            </dirset>
-        </path>
-        <property name="sdes-pkg-name" refid="sdes_name" />
-        <echo message="renaming ${sdes-pkg-name} to ${tmp}/libjitsi/lib/src/sdes4j" />
-        <move file="${sdes-pkg-name}" tofile="${tmp}/libjitsi/lib/src/sdes4j" />
-
         <!-- fmj
         svn checkout http://svn.code.sf.net/p/fmj/code/fmj fmj
         -->
@@ -201,9 +189,6 @@
             <fileset dir="lib/src/zrtp4j/lib">
                 <include name="*"/>
             </fileset>
-            <fileset dir="lib/src/sdes4j/lib">
-                <include name="*"/>
-            </fileset>
             <fileset dir="lib/src/jsip/lib">
                 <include name="*"/>
             </fileset>
@@ -225,15 +210,6 @@
         <ant dir="lib/src/ice4j"
              inheritAll="false"
              target="clean"/>
-        <exec   dir="lib/src/sdes4j"
-                executable="mvn-debian"
-                resolveexecutable="true"
-                failonerror="true">
-            <arg value="-f" />
-            <arg value="pom.xml" />
-            <arg value="-Dmaven.test.skip=true" />
-            <arg value="clean" />
-        </exec>
         <ant dir="lib/src/jsip"
              inheritAll="false"
              target="clean"/>
@@ -285,19 +261,6 @@
         <symlink resource="/usr/share/java/weupnp.jar"
                  overwrite="true"
                  link="lib/src/ice4j/lib/weupnp-0.1.2-SNAPSHOT.jar"/>
-
-        <!-- sdes -->
-        <exec   dir="lib/src/sdes4j"
-                executable="mvn-debian"
-                resolveexecutable="true"
-                failonerror="true">
-            <arg value="-f" />
-            <arg value="pom.xml" />
-            <arg value="-Dmaven.test.skip=true" />
-            <arg value="package" />
-        </exec>
-        <copy tofile="lib/sdes4j.jar"
-              file="lib/src/sdes4j/target/sdes4j-1.1.3.jar"/>
 
         <symlink resource="/usr/share/java/org.apache.felix.framework.jar"
                  overwrite="true"

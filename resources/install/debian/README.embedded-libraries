@@ -36,12 +36,6 @@ designed to be compatible to BouncyCastle.
 Reason: No Debian package.
 ITP: http://bugs.debian.org/754198
 
-- sdes4j http://code.google.com/p/sdes4j/
-Implementation of RFC4568: Session Description Protocol (SDP)
-Security Descriptions for Media Streams for Java.
-Jitsi’s Ingo Bauersachs is maintainer and owner of the project.
-Reason: No Debian package.
-
 - zrtp4j https://github.com/wernerd/ZRTP4J
 Java implementation of ZRTP protocol.
 Werner Dittmann from Jitsi team is maintainer and owner of the project.
