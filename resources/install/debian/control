@@ -51,7 +51,7 @@ Package: libjitsi
 Architecture: all
 Depends: ${misc:Depends},
          libjitsi-jni (>= ${source:Version}),
-         default-jre | java6-runtime,
+         default-jre,
          liblog4j1.2-java,
          libfelix-framework-java,
          libbcprov-java,
